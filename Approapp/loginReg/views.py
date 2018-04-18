@@ -36,7 +36,8 @@ def register(request):
 
 
 def profile_view(request):
-    args={'user':request.user}
+    usr = UserProfile.objects.get(user=request.user)
+    args = {'user':usr}
     return render(request,'loginReg/profile.html',args)
 
 def profile_edit(request):
