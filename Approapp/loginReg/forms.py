@@ -42,4 +42,7 @@ class RegistrationForm(UserCreationForm):
 
         if commit:
             user.save()
+            # userprof = UserProfile.objects.create(user=user, user_id=user.id, oid=self.cleaned_data['organisation_id'],
+            #                        rio=self.cleaned_data['role_in_organisation'])
+            # userprof.save()
         return user

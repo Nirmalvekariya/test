@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block body %}
     <h1>Register</h1>
+    {% if form.subject.errors %}
+    <ol>
+    {% for error in form.subject.errors %}
+        <li><strong>{{ error|escape }}</strong></li>
+    {% endfor %}
+    </ol>
+{% endif %}
 <div class="container">
 <form method="post">
     {% csrf_token %}
